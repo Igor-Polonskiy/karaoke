@@ -34,9 +34,11 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         let audioChunks = [];
         mediaRecorder.addEventListener("dataavailable", function(event) {
             audioChunks.push(event.data);
+            console.log(event.data)
         });
 
         mediaRecorder.addEventListener("stop", function() {
+            console.log(audioChunks)
             const audioBlob = new Blob(audioChunks, {
                 type: 'audio/wav'
             });
@@ -44,14 +46,12 @@ navigator.mediaDevices.getUserMedia({ audio: true })
             let audio = document.createElement('audio');
             audio.src = audioUrl;
             audio.controls = true;
-            audio.autoplay = false;
+            audio.autoplay = true;
             audio.classList.add('myrecord')
             document.querySelector('#audio').append(audio);
             audioChunks = [];
+            console.log(document.querySelector('.myrecord').duration)
         });
-        document.querySelector('#stop').addEventListener('click', function() {
-            mediaRecorder.stop();
-            music.pause()
-            music.currentTime = 0
-        });
+
+
     });
