@@ -1,0 +1,53 @@
+body {
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.karaokeWrapper {
+    margin: 20px;
+    border: 1px solid grey;
+    padding: 10px
+}
+
+#record {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: red;
+    cursor: pointer;
+    border-width: 3px;
+}
+
+#record:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+#record>img {
+    width: 100%;
+}
+
+#audio {
+    margin-top: 5px;
+    height: 60px;
+}
+
+.pleer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.karaoke_txt>img:first-child {
+    width: 33%;
+}
+
+.karaoke_txt>img:last-child {
+    width: 67%;
+}
+
+.active {
+    background-color: pink;
+    transform: ro
+}
