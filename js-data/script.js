@@ -1,7 +1,8 @@
 (() => {
     const task = document.querySelector('.karaokeWrapper')
-    const startRecord = task.querySelector('#record')
+    const startRecord = task.querySelector('.recordButton')
     const music = task.querySelector('.music')
+    const audioLine = document.querySelector('.audioWrapper')
 
     navigator.mediaDevices.getUserMedia({
             audio: true
@@ -15,6 +16,7 @@
                 if (task.querySelector('.myrecord')) {
                     task.querySelector('.myrecord').remove()
                     task.querySelector('.download').remove()
+                    task.querySelector('.delite').remove()
                 }
                 if (!record) {
                     record = !record
@@ -45,28 +47,37 @@
                     type: 'audio/wav'
                 });
                 const audioUrl = URL.createObjectURL(audioBlob);
-                let audio = document.createElement('audio');
-                let link = document.createElement('a')
-                link.href = audioUrl
-                link.download = 'myAudio'
-                link.classList.add('download')
-                link.style.display = 'block'
-                link.style.width = '40px'
-                link.style.height = '40px'
-                link.style.backgroundImage = `url(Images_1/download.png)`
-                audio.src = audioUrl;
-                audio.controls = true;
-                audio.classList.add('myrecord')
-                document.querySelector('#audio').append(audio);
-                document.querySelector('#audio').append(link);
+                createAudio(audioUrl)
+                createDownload(audioUrl)
+                createDelite()
                 audioChunks = [];
             });
 
-            mediaRecorder.addEventListener("stop", function() {
+            function createAudio(audioUrl) {
+                let audio = document.createElement('audio');
+                audio.src = audioUrl;
+                audio.controls = true;
+                audio.classList.add('myrecord')
+                audioLine.append(audio);
+            }
 
-                let myrecord = document.querySelector('.myrecord')
-                myrecord.duration = 25
-            });
+            function createDownload(audioUrl) {
+                let link = document.createElement('a')
+                link.href = audioUrl
+                link.download = 'myAudio'
+                link.classList.add('download', 'audiocontrolBtn')
+                link.style.backgroundImage = `url(Images_1/download.png)`
+                audioLine.append(link);
+            }
 
+            function createDelite() {
+                let delite = document.createElement('button');
+                delite.classList.add('delite', 'audiocontrolBtn')
+                delite.style.backgroundImage = `url(Images_1/delite.png)`
+                delite.addEventListener('click', () => {
+                    audioLine.innerHTML = ''
+                })
+                audioLine.append(delite);
+            }
         });
 })()
