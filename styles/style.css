@@ -29,8 +29,14 @@ body {
 }
 
 #audio {
+    display: flex;
     margin-top: 5px;
     height: 60px;
+}
+
+.download {
+    margin-left: 20px;
+    background-size: contain;
 }
 
 .pleer {
