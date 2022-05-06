@@ -4,10 +4,20 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.karaokeWrapper {
+.karaokeWrapper,
+.recordWrapper {
     margin: 20px;
     border: 1px solid grey;
     padding: 10px
+}
+
+.record_txt {
+    display: flex;
+    justify-content: center;
+}
+
+.record_txt img {
+    width: 100%;
 }
 
 .recordButton {

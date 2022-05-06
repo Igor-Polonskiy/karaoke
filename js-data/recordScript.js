@@ -1,8 +1,7 @@
 (() => {
-    const task = document.querySelector('.karaokeWrapper')
+    const task = document.querySelector('.recordWrapper')
     const startRecord = task.querySelector('.recordButton')
-    const music = task.querySelector('.music')
-    const audioLine = document.querySelector('.audioWrapper')
+    const audioLine = task.querySelector('.audioWrapper')
 
     navigator.mediaDevices.getUserMedia({
             audio: true
@@ -20,24 +19,14 @@
                 }
                 if (!record) {
                     record = !record
-                    music.play()
                     mediaRecorder.start();
 
                 } else {
                     mediaRecorder.stop();
-                    music.pause()
-                    music.currentTime = 0
                     record = !record
                 }
             });
 
-            music.addEventListener('ended', (e) => {
-                mediaRecorder.stop();
-                startRecord.classList.remove('active')
-                music.pause()
-                music.currentTime = 0
-                record = !record
-            })
 
             let audioChunks = [];
             mediaRecorder.addEventListener("dataavailable", function(event) {
