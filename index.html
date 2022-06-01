@@ -6,31 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/karaoke.css">
+    <link rel="stylesheet" href="styles/record.css">
 </head>
 
 <body>
     <h1>Караоке</h1>
     <div class="karaokeWrapper">
-        <!--путь к картинке текста песни Images_1/txt.png-->
-        <div class="karaoke_txt"><img src="Images_1/singer.jpg" alt=""><img src="Images_1/txt.png" alt="text"></div>
+        <!--путь к картинке текста песни Images_1/karaoke/txt.png-->
+        <div class="karaoke_txt"><img src="Images_1/karaoke/singer.jpg" alt=""><img src="Images_1/karaoke/txt.png" alt="text"></div>
         <div class="pleer">
-            <button class="recordButton"><img src="Images_1/microphone-342.svg" alt=""></button>
+            <button class="recordButton"><img src="Images_1/karaoke/microphone-342.svg" alt=""></button>
             <div class="audioWrapper"></div>
         </div>
-        <!--вставляем путь к музыке для караоке sound/Hello_song_minus.mp3-->
-        <audio class="music" src="sound/Hello_song_minus.mp3"></audio>
+        <!--вставляем путь к музыке для караоке sound/karaoke/Hello_song_minus.mp3-->
+        <audio class="music" src="sound/karaoke/Hello_song_minus.mp3"></audio>
     </div>
+
     <h1>Запиши себя</h1>
     <div class="recordWrapper">
-        <div class="record_txt"><img src="Images_1/Eng-2021_2_1_4_14.png" alt="text"></div>
+        <div class="record_txt"><img src="Images_1/record/Eng-2021_2_1_4_14.png" alt="text"></div>
         <div class="pleer">
-            <button class="recordButton"><img src="Images_1/microphone-342.svg" alt=""></button>
+            <button class="recordButton"><img src="Images_1/record/microphone-342.svg" alt=""></button>
             <div class="audioWrapper"></div>
         </div>
     </div>
-    <script src="js-data/script.js"></script>
-    <script src="js-data/recordScript.js"></script>
+
+    <script src="js-data/karaoke.js"></script>
+    <script src="js-data/record.js"></script>
 </body>
 
 </html>

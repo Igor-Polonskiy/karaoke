@@ -65,14 +65,14 @@
                 link.href = audioUrl
                 link.download = 'myAudio'
                 link.classList.add('download', 'audiocontrolBtn')
-                link.style.backgroundImage = `url(Images_1/download.png)`
+                link.style.backgroundImage = `url(Images_1/karaoke/download.png)`
                 audioLine.append(link);
             }
 
             function createDelite() {
                 let delite = document.createElement('button');
                 delite.classList.add('delite', 'audiocontrolBtn')
-                delite.style.backgroundImage = `url(Images_1/delite.png)`
+                delite.style.backgroundImage = `url(Images_1/karaoke/delite.png)`
                 delite.addEventListener('click', () => {
                     audioLine.innerHTML = ''
                 })

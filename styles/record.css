@@ -1,0 +1,64 @@
+body {
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.recordWrapper {
+    margin: 20px;
+    border: 1px solid grey;
+    padding: 10px
+}
+
+.record_txt {
+    display: flex;
+    justify-content: center;
+}
+
+.record_txt img {
+    width: 100%;
+}
+
+.recordButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: red;
+    cursor: pointer;
+    border-width: 3px;
+}
+
+.recordButton:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+.recordButton>img {
+    width: 100%;
+}
+
+.audioWrapper {
+    display: flex;
+    margin-top: 5px;
+    height: 60px;
+}
+
+.audiocontrolBtn {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border: none;
+    background-size: contain;
+    background-color: white;
+    cursor: pointer;
+}
+
+.pleer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.active {
+    background-color: pink;
+}
